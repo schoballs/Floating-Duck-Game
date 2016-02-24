@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Monster Wants Candy demo</title>
+	<meta http-equiv="X-UA-Compatible" content="chrome=1, IE=9">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="Phaser App">
+    <meta name="viewport" content="initial-scale=1 maximum-scale=1 user-scalable=0 minimal-ui" />
+    <link rel="stylesheet" href="css/stylesheet.css" type="text/css" charset="utf-8" />
+	<script src="src/phaser-2.0.7.min.js"></script>
+	<script src="src/Boot.js"></script>
+	<script src="src/Preloader.js"></script>
+	<script src="src/MainMenu.js"></script>
+	<script src="src/Game.js"></script>
+    <script src="src/Game+.js"></script>
+</head>
+<body>
+    <div class="container_div" style="position:relative;">
+    <div class="hover_div">                            
+        <!--<img class="some_class" src="/settings_icon.png" style="height: 20px; display: block;">-->
+    </div>
+    <script>
+(function() {
+	// initialize the framework
+	var game = new Phaser.Game(640, 1136, Phaser.AUTO, 'game');
+	// add game states
+	game.state.add('Boot', Candy.Boot);
+	game.state.add('Preloader', Candy.Preloader);
+	game.state.add('MainMenu', Candy.MainMenu);
+	game.state.add('Game', Candy.Game);
+    game.state.add('ExtraGame',Candy.ExtraGame);
+	// start the Boot state
+	game.state.start('Boot');
+})();
+</script>    
+<!--<canvas width="180" height="270" style="width: 180px; height: 270px;"></canvas>-->
+</div>
+
+    
+</body>
+</html>
